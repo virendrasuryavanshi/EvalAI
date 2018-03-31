@@ -11,7 +11,9 @@ var defaultMeta = {
     "url": "https://evalai.cloudcv.org",
     "title": "EvalAI: Evaluating state of the art in AI",
     "image": {
-        "url": "https://evalai.cloudcv.org/dist/images/evalai-cover.png",
+        "url": "http://staging.evalai.cloudcv.org/dist/images/evalai-cover.png",
+        "width": "1200",
+        "height": "628",
         "type": "image/png",
         "alt": "EvalAI_cover_image"
     },
@@ -27,6 +29,8 @@ function metaService() {
         meta.url = (typeof newMeta.url === 'undefined') ? defaultMeta.url : newMeta.url;
         meta.title = (typeof newMeta.title === 'undefined') ? defaultMeta.title : newMeta.title;
         meta.image.url = (typeof newMeta.image.url === 'undefined') ? defaultMeta.image.url : newMeta.image.url;
+        meta.image.width = (typeof newMeta.image.width === 'undefined') ? defaultMeta.image.width : newMeta.image.width;
+        meta.image.height = (typeof newMeta.image.height === 'undefined') ? defaultMeta.image.height : newMeta.image.height;
         meta.image.type = (typeof newMeta.image.type === 'undefined') ? defaultMeta.image.type : newMeta.image.type;
         meta.image.alt = (typeof newMeta.image.alt === 'undefined') ? defaultMeta.image.alt : newMeta.image.alt;
         meta.description = (typeof newMeta.description === 'undefined') ? defaultMeta.description : newMeta.description;

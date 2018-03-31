@@ -32,7 +32,7 @@
                 "title": "test Home Page",
                 "url": "https://evalai.cloudcv.org",
                 "image": {
-                    "url": "https://evalai.cloudcv.org/dist/images/evalai-cover.png",
+                    "url": "http://staging.evalai.cloudcv.org/dist/images/evalai-cover.png",
                     "alt": "home image",
                 }
             }
@@ -60,7 +60,7 @@
                 "title": "test login Page",
                 "url": "https://evalai.cloudcv.org/auth/login",
                 "image": {
-                    "url": "https://evalai.cloudcv.org/dist/images/evalai-logo.png",
+                    "url": "http://staging.evalai.cloudcv.org/dist/images/evalai-logo.png",
                     "alt": "logo image",
                 }
             }
