@@ -531,6 +531,8 @@
         $rootScope.isAuth = false;
         // check for valid user
         $rootScope.$on("$stateChangeStart", function(event, toState) {
+            $rootScope.metaData = metaService.validate(toState.meta);
+            console.log($rootScope.metaData);
             if (utilities.isAuthenticated()) {
                 $rootScope.isAuth = true;
                 if (toState.authpage) {
@@ -544,7 +546,6 @@
                     $state.go("auth.login");
                 }
             }
-
         });
 
         $rootScope.$on('$stateChangeStart', function(event, to, params) {
@@ -557,8 +558,6 @@
         $rootScope.$on('$stateChangeSuccess', function() {
             // Save the route title
             $rootScope.pageTitle = $state.current.title;
-            $rootScope.metaData = metaService.validate($state.current.meta);
-            console.log($rootScope.metaData);
             // Scroll to top
             $window.scrollTo(0, 0);
             // Google Analytics Scripts
