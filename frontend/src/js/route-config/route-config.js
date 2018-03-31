@@ -527,11 +527,25 @@
         // if ((timeNow - getTokenTime) > tokenExpTime) {
         //     utilities.resetStorage();
         // }
+        var defaultMeta = {
+            "type": "website",
+            "site_name": "EvalAI",
+            "url": "https://evalai.cloudcv.org",
+            "title": "EvalAI: Evaluating state of the art in AI",
+            "image": {
+                "url": "http://staging.evalai.cloudcv.org/dist/images/evalai-cover.png",
+                "width": "1200",
+                "height": "628",
+                "type": "image/png",
+                "alt": "EvalAI_cover_image"
+            },
+            "description": "EvalAI is an open-source web platform for organizing and participating in challenges to push the state of the art on AI tasks.",
+        };
 
         $rootScope.isAuth = false;
         // check for valid user
         $rootScope.$on("$stateChangeStart", function(event, toState) {
-            $rootScope.metaData = metaService.validate(toState.meta);
+            $rootScope.metaData = metaService.validate(toState.meta, defaultMeta);
             console.log($rootScope.metaData);
             if (utilities.isAuthenticated()) {
                 $rootScope.isAuth = true;
