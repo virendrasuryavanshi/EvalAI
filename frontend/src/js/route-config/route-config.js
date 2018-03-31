@@ -27,7 +27,15 @@
             templateUrl: baseUrl + "/web/landing.html",
             controller: 'MainCtrl',
             controllerAs: 'main',
-            title: "Welcome"
+            title: "Welcome",
+            meta: {
+                "title": "test Home Page",
+                "url": "https://evalai.cloudcv.org",
+                "image": {
+                    "url": "https://evalai.cloudcv.org/dist/images/evalai-cover.png",
+                    "alt": "home image",
+                }
+            }
         };
 
         // Auth related urls
@@ -47,7 +55,15 @@
             url: "/login",
             templateUrl: baseUrl + "/web/auth/login.html",
             title: 'Login',
-            authpage: true
+            authpage: true,
+            meta: {
+                "title": "test login Page",
+                "url": "https://evalai.cloudcv.org/auth/login",
+                "image": {
+                    "url": "https://evalai.cloudcv.org/dist/images/evalai-logo.png",
+                    "alt": "logo image",
+                }
+            }
         };
 
         var signup = {
@@ -502,7 +518,7 @@
         .module('evalai')
         .run(runFunc);
 
-    function runFunc($rootScope, $state, utilities, $window, $location, toaster) {
+    function runFunc($rootScope, $state, utilities, $window, $location, toaster, metaService) {
         // setting timout for token (7days)
         // var getTokenTime = utilities.getData('tokenTime');
         // var timeNow = (new Date()).getTime();
@@ -541,6 +557,8 @@
         $rootScope.$on('$stateChangeSuccess', function() {
             // Save the route title
             $rootScope.pageTitle = $state.current.title;
+            $rootScope.metaData = metaService.validate($state.current.meta);
+            console.log($rootScope.metaData);
             // Scroll to top
             $window.scrollTo(0, 0);
             // Google Analytics Scripts

@@ -7,13 +7,14 @@
     <meta name="description" content="EvalAI is an open-source web platform for organizing and participating in challenges to push the state of the art on AI tasks.">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!--Open Graph Related Stuff-->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="EvalAI: Evaluating state of the art in AI" />
-    <meta property="og:url" content="https://evalai.cloudcv.org" />
-    <meta property="og:image" content="https://evalai.cloudcv.org/dist/images/evalai-cover.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:site_name" content="EvalAI" />
-    <meta property="og:description" content="EvalAI is an open-source web platform for organizing and participating in challenges to push the state of the art on AI tasks." />
+    <meta property="og:type" content="{{ metaData.type }}" />
+    <meta property="og:site_name" content="{{ metaData.site_name }}" />
+    <meta property="og:url" content="{{ metaData.url }}" />
+    <meta property="og:title" content="{{ metaData.title }}" />
+    <meta property="og:image" content="{{ metaData.image.url }}" />
+    <meta property="og:image:type" content="{{ metaData.image.type }}" />
+    <meta property="og:image:alt" content="{{ metaData.image.alt }}" />
+    <meta property="og:description" content="{{ metaData.description }}" />
     <!--Twitter Card Stuff-->
     <meta name="twitter:card" content="summary_large_image" />
     <!-- Favicon -->
